@@ -5,6 +5,7 @@ Route::get('/', function () {
 });
 
 Route::get('atores', 'AtoresController@index');
+Route::get('atores/create', 'AtoresController@create');
 
 
 Auth::routes();
