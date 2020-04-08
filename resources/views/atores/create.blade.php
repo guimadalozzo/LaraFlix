@@ -2,7 +2,40 @@
 
 @section('content')
 	<h3>Novo Ator</h3>
-	{!! Form::open() !!}
+
+	{!! Form::open(['url'=>'atores/store']) !!}
+
+		<div class="form-group">
+			{!! Form::label('nome', 'Nome:') !!}
+			{!! Form::text('nome', null, ['class'=>'form-control', 'required']) !!}
+		</div>
+
+		<div class="form-group">
+			{!! Form::label('nacionalidade', 'Nacionalidade:') !!}
+			{!! Form::select('nacionalidade', 
+							 array( 'BRA'=>'Brasileiro',
+							 		'USA'=>'Americano', 
+							 		'CAN'=>'Canadense',
+							 		'ARG'=>'Atgentino'),
+							 'BRA', ['class'=>'form-control', 'required']) !!}
+		</div>
+
+		<div class="form-group">
+			{!! Form::label('dt_nascimento', 'Data de Nascimento:') !!}
+			{!! Form::date('dt_nascimento', null, ['class'=>'form-control', 'required']) !!}
+		</div>
+
+		<div class="form-group">
+			{!! Form::label('inicio_atividades', 'Início das Atividades:') !!}
+			{!! Form::date('inicio_atividades', null, ['class'=>'form-control', 'required']) !!}
+		</div>
+
+		<div class="form-group">
+			{!! Form::submit('Criar Ator', ['class'=>'btn btn-primary']) !!}
+			{!! Form::reset('Limpar', ['class'=>'btn btn-default']) !!}
+		</div>
+
+
 
 	{!! Form::close() !!}	
 @stop
