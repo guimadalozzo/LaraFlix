@@ -3,6 +3,14 @@
 @section('content')
 	<h3>Novo Ator</h3>
 
+	@if($errors->any())
+		<ul class="alert alert-danger">
+			@foreach($errors->all() as $error)
+				<li>{{ $error }}</li>
+			@endforeach
+		</ul>
+	@endif
+
 	{!! Form::open(['url'=>'atores/store']) !!}
 
 		<div class="form-group">
@@ -16,7 +24,7 @@
 							 array( 'BRA'=>'Brasileiro',
 							 		'USA'=>'Americano', 
 							 		'CAN'=>'Canadense',
-							 		'ARG'=>'Atgentino'),
+							 		'ARG'=>'Argentino'),
 							 'BRA', ['class'=>'form-control', 'required']) !!}
 		</div>
 
@@ -34,8 +42,6 @@
 			{!! Form::submit('Criar Ator', ['class'=>'btn btn-primary']) !!}
 			{!! Form::reset('Limpar', ['class'=>'btn btn-default']) !!}
 		</div>
-
-
 
 	{!! Form::close() !!}	
 @stop
