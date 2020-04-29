@@ -14,7 +14,7 @@ class RemoveNacionalidadeToAtores extends Migration
     public function up()
     {
         Schema::table('atores', function (Blueprint $table) {
-            //
+            $table->dropColumn('nacionalidade');
         });
     }
 
@@ -26,7 +26,7 @@ class RemoveNacionalidadeToAtores extends Migration
     public function down()
     {
         Schema::table('atores', function (Blueprint $table) {
-            //
+            $table->string('nacionalidade', 50);
         });
     }
 }
