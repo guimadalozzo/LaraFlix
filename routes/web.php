@@ -13,6 +13,15 @@ Route::group(['prefix'=>'atores', 'where'=>['id'=>'[0-9]+']], function() {
     Route::post('store',       ['as'=>'atores.store',   'uses'=>'AtoresController@store'  ]);
 });
 
+Route::group(['prefix'=>'nacionalidades', 'where'=>['id'=>'[0-9]+']], function() {
+    Route::get('',             ['as'=>'nacionalidades',         'uses'=>'NacionalidadesController@index'  ]);
+    Route::get('create',       ['as'=>'nacionalidades.create',  'uses'=>'NacionalidadesController@create' ]);
+    Route::get('{id}/destroy', ['as'=>'nacionalidades.destroy', 'uses'=>'NacionalidadesController@destroy']);
+    Route::get('{id}/edit',    ['as'=>'nacionalidades.edit',    'uses'=>'NacionalidadesController@edit'   ]);
+    Route::put('{id}/update',  ['as'=>'nacionalidades.update',  'uses'=>'NacionalidadesController@update' ]);
+    Route::post('store',       ['as'=>'nacionalidades.store',   'uses'=>'NacionalidadesController@store'  ]);
+});
+
 
 Auth::routes();
 
