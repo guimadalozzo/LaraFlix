@@ -1,7 +1,7 @@
 @extends('adminlte::page')
 
 @section('content')
-	<h3>Editando Nacionalidade: {{ $nacionalidade->nome }} </h3>
+	<h3>Editando Nacionalidade: {{ $nacionalidade->descricao }} </h3>
 
 	@if($errors->any())
 		<ul class="alert alert-danger">

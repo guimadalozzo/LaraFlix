@@ -6,6 +6,7 @@
 		<thead>
 			<th>Nome</th>
 			<th>Data de Nascimento</th>
+			<th>Nacionalidade</th>
 			<th>Ações</th>
 		</thead>
 
@@ -14,6 +15,8 @@
 				<tr>
 					<td>{{ $ator->nome }}</td>
 					<td>{{ Carbon\Carbon::parse($ator->dt_nascimento)->format('d/m/Y') }}</td>
+
+					<td>{{ $ator->nacionalidade->descricao }}</td>
 
 					<td>
 						<a href="{{ route('atores.edit',    ['id'=>$ator->id]) }}" class="btn-sm btn-success">Editar</a>
