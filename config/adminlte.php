@@ -208,7 +208,7 @@ return [
     */
 
     'menu' => [
-        ['header' => 'ATORES'],
+        ['header' => 'CADASTROS'],
         [
             'text' => 'Atores',
             'url'  => 'atores',
@@ -218,6 +218,11 @@ return [
             'text' => 'Nacionalidades',
             'url'  => 'nacionalidades',
             'icon' => 'fas fa-fw fa-flag',
+        ],
+        [
+            'text' => 'Filmes',
+            'url'  => 'filmes',
+            'icon' => 'fas fa-fw fa-film',
         ],
         // [
         //     'text' => 'search',

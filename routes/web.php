@@ -22,6 +22,13 @@ Route::group(['middleware' => 'auth'], function () {
         Route::put('{id}/update',  ['as'=>'nacionalidades.update',  'uses'=>'NacionalidadesController@update' ]);
         Route::post('store',       ['as'=>'nacionalidades.store',   'uses'=>'NacionalidadesController@store'  ]);
     });
+
+    Route::group(['prefix'=>'filmes', 'where'=>['id'=>'[0-9]+']], function() {
+        Route::get('',       ['as'=>'filmes',        'uses'=>'FilmesController@index' ]);
+        Route::get('create', ['as'=>'filmes.create', 'uses'=>'FilmesController@create']);
+        Route::post('store', ['as'=>'filmes.store',  'uses'=>'FilmesController@store' ]);
+    });
+    
 });
 
 Auth::routes();
