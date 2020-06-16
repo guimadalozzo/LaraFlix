@@ -32,7 +32,7 @@
 					<td>{{ $ator->nacionalidade->descricao }}</td>
 
 					<td>
-						<a href="{{ route('atores.edit',    ['id'=>$ator->id]) }}" class="btn-sm btn-success">Editar</a>
+						<a href="{{ route('atores.edit', ['id'=>\Crypt::encrypt($ator->id)]) }}" class="btn-sm btn-success">Editar</a>
 						<a href="#" onclick="return ConfirmaExclusao({{$ator->id}})"  class="btn-sm btn-danger">Remover</a>
 					</td>
 				</tr>

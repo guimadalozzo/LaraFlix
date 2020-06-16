@@ -46,8 +46,8 @@ class AtoresController extends Controller
 		return $ret;
 	}
 
-	public function edit($id) {
-		$ator = Ator::find($id);
+	public function edit(Request $request) {
+		$ator = Ator::find(\Crypt::decrypt($request->get('id')));
 		return view('atores.edit', compact('ator'));
 	}
 
