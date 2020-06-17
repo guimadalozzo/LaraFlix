@@ -29,7 +29,7 @@
 					<td>{{ $ator->nome }}</td>
 					<td>{{ Carbon\Carbon::parse($ator->dt_nascimento)->format('d/m/Y') }}</td>
 
-					<td>{{ $ator->nacionalidade->descricao }}</td>
+					<td>{{ $ator->descricao }}</td>
 
 					<td>
 						<a href="{{ route('atores.edit', ['id'=>\Crypt::encrypt($ator->id)]) }}" class="btn-sm btn-success">Editar</a>

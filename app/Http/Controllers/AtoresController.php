@@ -11,8 +11,13 @@ class AtoresController extends Controller
 
 	public function index(Request $filtro) {
 		$filtragem = $filtro->get('desc_filtro');
-        if ($filtragem == null) 
-    		$atores = Ator::orderBy('nome')->paginate(10);
+        if ($filtragem == null) {
+    		//$atores = Ator::orderBy('nome')->paginate(10);
+    		$atores = \DB::table('atores')
+	            ->join('nacionalidades', 'atores.nacionalidade_id', '=', 'nacionalidades.id')
+	            ->select('atores.*', 'nacionalidades.descricao')
+	            ->paginate(10);
+        }
         else
             $atores = Ator::where('nome', 'like', '%'.$filtragem.'%')
         					->orderBy("nome")
